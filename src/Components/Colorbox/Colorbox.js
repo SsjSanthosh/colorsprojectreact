@@ -16,7 +16,6 @@ export default class Colorbox extends Component {
     }, 1500);
   };
   render() {
-    console.log(this.props.color);
     const name = this.props.color.name;
     const format = this.props.format;
     const color = this.props.color[format];
@@ -34,7 +33,7 @@ export default class Colorbox extends Component {
           </div>
           <div className="copy-container">
             <div className="box-content">
-              <span class="box-name">{name}</span>
+              <span className="box-name">{name}</span>
             </div>
             <button className="copy-btn">Copy</button>
             <span className="box-more">More</span>
