@@ -6,8 +6,10 @@
   align-items: center;
 }
 .logo {
-  width: 5%;
+  width: 10%;
   padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   background: rgb(230, 223, 223);
 }
 .slider {
@@ -19,6 +21,10 @@
 .logo a {
   color: black;
   text-decoration: none;
+}
+.select-container {
+  margin-left: auto;
+  margin-right: 4rem;
 }
 .rc-slider-track {
   background: transparent;
