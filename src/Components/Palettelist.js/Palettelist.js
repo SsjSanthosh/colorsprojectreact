@@ -1,19 +1,56 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-export default class Palettelist extends Component {
+import Minipalette from "../Minipalettes/Minipalettes";
+import { withStyles } from "@material-ui/styles";
+const style = {
+  root: {
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "royalblue"
+  },
+  container: {
+    width: "50%",
+    display: "flex",
+    flexDirection: "column"
+  },
+  title: {
+    textAlign: "center"
+  },
+  miniboxContainer: {
+    boxSizing: "border-box",
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: "repeat(3,30%)",
+    gridColumnGap: "5%"
+  },
+  nav: {
+    display: "flex",
+    justifyContent: "space-between"
+  }
+};
+class Palettelist extends Component {
   render() {
     console.log(this.props.palettes);
-    const h1 = this.props.palettes.map(el => (
+    const { classes } = this.props;
+    const miniPalettes = this.props.palettes.map(el => (
       <Link to={`/palette/${el.id}`} exact>
-        <h1>{el.paletteName}</h1>
+        <div className={classes.minibox}>
+          <Minipalette palette={el} />
+        </div>
       </Link>
     ));
-    console.log(h1);
+
     return (
-      <div>
-        <h1>Home Page!</h1>
-        {h1}
+      <div className={classes.root}>
+        <div className={classes.container}>
+          <h1 className={classes.nav}>
+            <div className={classes.title}>Home Page!</div>
+          </h1>
+          <div className={classes.miniboxContainer}>{miniPalettes}</div>
+        </div>
       </div>
     );
   }
 }
+export default withStyles(style)(Palettelist);
