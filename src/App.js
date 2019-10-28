@@ -32,7 +32,15 @@ class App extends Component {
         <Route
           path="/palette/:pid/:cid"
           exact
-          render={() => <Colorshades />}
+          render={props => (
+            <Colorshades
+              palette={generatePalette(
+                this.findPalette(props.match.params.pid)
+              )}
+              colorId={props.match.params.cid}
+              paletteId={props.match.params.pid}
+            />
+          )}
         ></Route>
       </Switch>
     );

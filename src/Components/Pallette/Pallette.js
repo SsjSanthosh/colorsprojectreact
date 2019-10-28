@@ -31,6 +31,7 @@ export default class Pallette extends Component {
         format={this.state.format}
         id={palette.id}
         key={uniqid()}
+        showLink
       />
     ));
     return (
@@ -39,6 +40,7 @@ export default class Pallette extends Component {
         <Navbar
           level={this.state.level}
           changeLevel={this.changeLevel}
+          showSlider
           handleFormatChange={this.handleFormatChange}
         />
         <div className="Palette-slider"></div>

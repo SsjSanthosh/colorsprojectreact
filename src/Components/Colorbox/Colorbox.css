@@ -8,6 +8,16 @@
   margin-bottom: -4.5px;
 }
 
+.Colorshades .Colorbox {
+  height: 45vh;
+}
+
+.go-back {
+  background-color: black;
+}
+.go-back .copy-btn {
+  opacity: 1;
+}
 .copy-btn {
   /* display: none; */
   opacity: 0;

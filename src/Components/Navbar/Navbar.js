@@ -21,7 +21,7 @@ export default class Navbar extends Component {
     this.setState({ open: false });
   };
   render() {
-    const { level, changeLevel } = this.props;
+    const { level, changeLevel, showSlider } = this.props;
     const { format } = this.state;
     return (
       <nav className="Navbar">
@@ -31,16 +31,21 @@ export default class Navbar extends Component {
             reactcolorapp
           </Link>
         </div>
-        <div className="slider-level">Level : {level}</div>
-        <div className="slider">
-          <Slider
-            defaultValue={level}
-            min={100}
-            max={900}
-            step={100}
-            onAfterChange={changeLevel}
-          />
-        </div>
+
+        {showSlider && (
+          <div>
+            <div className="slider-level">Level : {level}</div>
+            <div className="slider">
+              <Slider
+                defaultValue={level}
+                min={100}
+                max={900}
+                step={100}
+                onAfterChange={changeLevel}
+              />
+            </div>
+          </div>
+        )}
         <div className="select-container ">
           <Select value={format} onChange={this.handleFormatChange}>
             <MenuItem value="hex">Hex - #ffffff</MenuItem>
