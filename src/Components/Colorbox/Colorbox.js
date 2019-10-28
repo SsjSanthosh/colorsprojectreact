@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Colorbox.css";
 import "../utilities.css";
+import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 export default class Colorbox extends Component {
   constructor(props) {
@@ -16,10 +17,13 @@ export default class Colorbox extends Component {
     }, 1500);
   };
   render() {
+    console.log(this.props.color);
     const name = this.props.color.name;
     const format = this.props.format;
     const color = this.props.color[format];
     const copied = this.state.copied;
+    const paletteId = this.props.id;
+    const colorId = this.props.color.id;
     return (
       <CopyToClipboard text={color} onCopy={this.handleCopy}>
         <div className="Colorbox" style={{ background: color }}>
@@ -36,7 +40,13 @@ export default class Colorbox extends Component {
               <span className="box-name">{name}</span>
             </div>
             <button className="copy-btn">Copy</button>
-            <span className="box-more">More</span>
+            <Link
+              to={`/palette/${paletteId}/${colorId}`}
+              exact
+              onClick={e => e.stopPropagation()}
+            >
+              <span className="box-more">More</span>
+            </Link>
           </div>
         </div>
       </CopyToClipboard>

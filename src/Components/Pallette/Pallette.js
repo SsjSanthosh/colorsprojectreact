@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Colorbox from "../Colorbox/Colorbox";
-
+import uniqid from "uniqid";
 import "./Pallette.css";
 import Navbar from "../Navbar/Navbar";
 
@@ -24,8 +24,14 @@ export default class Pallette extends Component {
     console.log(name);
     const emoji = palette.emoji;
     const level = this.state.level;
+    console.log(palette);
     const colorBoxes = palette.colors[level].map(el => (
-      <Colorbox color={el} format={this.state.format} />
+      <Colorbox
+        color={el}
+        format={this.state.format}
+        id={palette.id}
+        key={uniqid()}
+      />
     ));
     return (
       <div className="Pallette">

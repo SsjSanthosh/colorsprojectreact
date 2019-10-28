@@ -5,7 +5,9 @@ import { Switch, Route } from "react-router-dom";
 import Pallette from "./Components/Pallette/Pallette";
 import seedcolors from "./seed-colors";
 import { generatePalette } from "./Helpers/Colorhelper";
+
 import Palettelist from "./Components/Palettelist.js/Palettelist";
+import Colorshades from "./Components/ColorShades/Colorshades";
 class App extends Component {
   findPalette = id => {
     return seedcolors.find(color => color.id === id);
@@ -26,6 +28,11 @@ class App extends Component {
               palette={generatePalette(this.findPalette(props.match.params.id))}
             />
           )}
+        ></Route>
+        <Route
+          path="/palette/:pid/:cid"
+          exact
+          render={() => <Colorshades />}
         ></Route>
       </Switch>
     );
