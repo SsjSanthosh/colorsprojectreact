@@ -8,6 +8,7 @@ import { generatePalette } from "./Helpers/Colorhelper";
 
 import Palettelist from "./Components/Palettelist.js/Palettelist";
 import Colorshades from "./Components/ColorShades/Colorshades";
+import Paletteform from "./Components/Paletteform/Paletteform";
 class App extends Component {
   findPalette = id => {
     return seedcolors.find(color => color.id === id);
@@ -20,6 +21,7 @@ class App extends Component {
           path="/"
           render={() => <Palettelist palettes={seedcolors} />}
         ></Route>
+        <Route path="/palette/new" exact render={() => <Paletteform />}></Route>
         <Route
           exact
           path="/palette/:id"

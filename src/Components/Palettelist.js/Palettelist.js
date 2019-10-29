@@ -27,6 +27,14 @@ const style = {
   nav: {
     display: "flex",
     justifyContent: "space-between"
+  },
+  formLink: {
+    color: "white",
+    borderBottom: "2px solid black",
+    "&:hover": {
+      color: "black",
+      borderBottom: "2px solid white"
+    }
   }
 };
 class Palettelist extends Component {
@@ -46,6 +54,9 @@ class Palettelist extends Component {
         <div className={classes.container}>
           <h1 className={classes.nav}>
             <div className={classes.title}>Home Page!</div>
+            <Link to="/palette/new" exact>
+              <div className={classes.formLink}>Create a new palette</div>
+            </Link>
           </h1>
           <div className={classes.miniboxContainer}>{miniPalettes}</div>
         </div>
