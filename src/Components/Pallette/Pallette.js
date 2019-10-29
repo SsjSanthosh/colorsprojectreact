@@ -40,7 +40,7 @@ export default class Pallette extends Component {
         <Navbar
           level={this.state.level}
           changeLevel={this.changeLevel}
-          showSlider
+          showSlider={true}
           handleFormatChange={this.handleFormatChange}
         />
         <div className="Palette-slider"></div>

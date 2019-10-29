@@ -7,7 +7,13 @@
   position: relative;
   margin-bottom: -4.5px;
 }
+.light-text {
+  color: white;
+}
 
+.Colorbox .dark-text {
+  color: rgb(53, 48, 48);
+}
 .Colorshades .Colorbox {
   height: 45vh;
 }
@@ -25,6 +31,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  font-size: 1.2rem;
+  font-weight: 400;
   transform: translate(-50%, -50%);
   border: 0;
   color: white;
