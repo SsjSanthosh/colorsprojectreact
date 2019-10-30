@@ -12,7 +12,14 @@ import Paletteform from "./Components/Paletteform/Paletteform";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { palettes: seedcolors };
+    const savedPalettes = JSON.parse(localStorage.getItem("palettes"));
+    this.state = { palettes: savedPalettes || seedcolors };
+    if (!savedPalettes) {
+      localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
+    }
+  }
+  componentDidUpdate() {
+    localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
   }
   findPalette = id => {
     return this.state.palettes.find(color => color.id === id);
