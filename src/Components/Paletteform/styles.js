@@ -1,4 +1,4 @@
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 const drawerWidth = 400;
 export const useStyles = makeStyles(theme => ({
   root: {
@@ -57,9 +57,60 @@ export const useStyles = makeStyles(theme => ({
     marginLeft: 0
   },
   createTitle: {
-    textAlign: "center"
+    textAlign: "center",
+    marginRight: "3rem"
   },
   colorDiv: {
-    marginTop: "46px"
+    marginTop: "66px"
+  },
+  navForm: {
+    display: "flex",
+    alignContent: "center",
+    justifyContent: "center"
+  },
+  navInput: {
+    width: "60%",
+    marginTop: "-1rem"
+  },
+
+  btn1: {
+    width: "40%",
+    height: "60%",
+    marginLeft: "1rem"
+  },
+  btn2: {
+    width: "120%",
+    marginLeft: "1rem",
+    height: "30%"
+  },
+  drawerTitle: {
+    textAlign: "center",
+    margin: "2rem 0"
+  },
+  btnDiv: {
+    margin: "0 auto"
+  },
+  drawerBtn: {
+    margin: "1rem"
+  },
+  colorpicker: {
+    width: "80% !important",
+    margin: "0 auto",
+    marginBottom: "2rem"
+  },
+  colorForm: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
+  },
+  colorInput: {
+    width: "50%",
+    margin: "0 auto",
+    marginBottom: "2rem"
+  },
+  addBtn: {
+    width: "50%",
+    padding: "1rem 3rem",
+    margin: "0 auto"
   }
 }));

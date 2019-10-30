@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Pallette from "./Components/Pallette/Pallette";
@@ -10,8 +10,20 @@ import Palettelist from "./Components/Palettelist.js/Palettelist";
 import Colorshades from "./Components/ColorShades/Colorshades";
 import Paletteform from "./Components/Paletteform/Paletteform";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { palettes: seedcolors };
+  }
   findPalette = id => {
-    return seedcolors.find(color => color.id === id);
+    return this.state.palettes.find(color => color.id === id);
+  };
+  addPalette = palette => {
+    console.log("this is what passed ", palette);
+    const newPalettes = [...this.state.palettes, palette];
+    this.setState({ palettes: newPalettes });
+    setTimeout(() => {
+      console.log("palette added", this.state.palettes);
+    }, 400);
   };
   render() {
     return (
@@ -19,9 +31,19 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => <Palettelist palettes={seedcolors} />}
+          render={() => <Palettelist palettes={this.state.palettes} />}
         ></Route>
-        <Route path="/palette/new" exact render={() => <Paletteform />}></Route>
+        <Route
+          path="/palette/new"
+          exact
+          render={routeprops => (
+            <Paletteform
+              addPalette={this.addPalette}
+              {...routeprops}
+              palettes={this.state.palettes}
+            />
+          )}
+        ></Route>
         <Route
           exact
           path="/palette/:id"

@@ -39,7 +39,6 @@ const style = {
 };
 class Palettelist extends Component {
   render() {
-    console.log(this.props.palettes);
     const { classes } = this.props;
     const miniPalettes = this.props.palettes.map(el => (
       <Link to={`/palette/${el.id}`} exact>
