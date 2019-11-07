@@ -3,6 +3,7 @@ import Colorbox from "../Colorbox/Colorbox";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import uniqid from "uniqid";
+import "./style.css";
 export default class Colorshades extends Component {
   constructor(props) {
     super(props);

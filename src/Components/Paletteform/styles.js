@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
-const drawerWidth = 400;
+import sizes from "../../Helpers/Breakpoint";
+const drawerWidth = 350;
 export const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -58,7 +59,10 @@ export const useStyles = makeStyles(theme => ({
   },
   createTitle: {
     textAlign: "center",
-    marginRight: "3rem"
+    marginRight: "3rem",
+    [sizes.down("sm")]: {
+      display: "none"
+    }
   },
   colorDiv: {
     marginTop: "66px"

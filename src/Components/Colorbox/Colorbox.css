@@ -56,7 +56,7 @@
   z-index: 10;
   overflow: hidden;
 
-  transform: scale(20);
+  transform: scale(50);
 }
 .Colorbox:hover .copy-btn {
   opacity: 1;
@@ -118,4 +118,23 @@
 .copy-msg span {
   font-weight: 100;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 992px) {
+  .Colorbox {
+    width: 50%;
+    height: 9vh;
+  }
+  .colorShadeBox {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .Colorbox {
+    width: 100%;
+    height: 5vh;
+  }
+  .copy-btn {
+    padding: 0.4rem;
+  }
 }

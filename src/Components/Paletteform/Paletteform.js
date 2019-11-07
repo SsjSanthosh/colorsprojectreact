@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import PaletteformNav from "../PaletteformNav/PaletteformNav";
 import { useTheme } from "@material-ui/core/styles";
-
+import seedcolors from "../../seed-colors";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -26,7 +26,7 @@ export default function NewPalette(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [curColor, setCurColor] = React.useState("teal");
-  const [allColors, setNewColor] = React.useState(props.palettes[0].colors);
+  const [allColors, setNewColor] = React.useState(seedcolors[0].colors);
   const paletteFull = allColors.length >= maxColors;
   const [newName, setNewName] = React.useState("");
 
@@ -43,11 +43,18 @@ export default function NewPalette(props) {
   };
 
   const addRandomColor = () => {
-    const range = props.palettes.map(p => p.colors).flat();
-    const idx = Math.floor(Math.random() * 179);
-    const newColors = [...allColors, range[idx]];
-    console.log(range);
-    console.log(range[idx]);
+    let range = props.palettes.map(p => p.colors).flat();
+    let idx = Math.floor(Math.random() * 179);
+
+    let color = range[idx];
+    let duplicate = true;
+    while (duplicate) {
+      idx = Math.floor(Math.random() * 179);
+      color = range[idx];
+      duplicate = allColors.some(c => c.name === color.name);
+    }
+    const newColors = [...allColors, color];
+
     setNewColor(newColors);
   };
 
@@ -162,7 +169,11 @@ export default function NewPalette(props) {
           className={classes.colorpicker}
           onChangeComplete={color => changeColor(color)}
         />
-        <ValidatorForm onSubmit={addNewColor} className={classes.colorForm}>
+        <ValidatorForm
+          onSubmit={addNewColor}
+          className={classes.colorForm}
+          instantValidate={false}
+        >
           <TextValidator
             value={newName}
             onChange={changeName}
@@ -197,6 +208,7 @@ export default function NewPalette(props) {
             handleDelete={handleDelete}
             axis="xy"
             onSortEnd={onSortEnd}
+            distance={10}
           ></DraggableList>
         </div>
       </main>

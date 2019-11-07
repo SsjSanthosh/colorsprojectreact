@@ -4,7 +4,8 @@ import "../utilities.css";
 import { Link } from "react-router-dom";
 import chroma from "chroma-js";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-export default class Colorbox extends Component {
+import { withStyles } from "@material-ui/styles";
+class Colorbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +29,6 @@ export default class Colorbox extends Component {
     const colorId = this.props.color.id;
     const isDarkColor = chroma(color).luminance() <= 0.08;
     const isLightColor = chroma(color).luminance() >= 0.7;
-    console.log(isLightColor);
 
     return (
       <CopyToClipboard text={color} onCopy={this.handleCopy}>
@@ -67,3 +67,5 @@ export default class Colorbox extends Component {
     );
   }
 }
+
+export default Colorbox;

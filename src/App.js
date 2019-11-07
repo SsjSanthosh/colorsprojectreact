@@ -18,6 +18,10 @@ class App extends Component {
       localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
     }
   }
+  deleteMiniPalette = id => {
+    const newPalettes = this.state.palettes.filter(p => p.id !== id);
+    this.setState({ palettes: newPalettes });
+  };
   componentDidUpdate() {
     localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
   }
@@ -38,7 +42,12 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => <Palettelist palettes={this.state.palettes} />}
+          render={() => (
+            <Palettelist
+              palettes={this.state.palettes}
+              deleteMiniPalette={this.deleteMiniPalette}
+            />
+          )}
         ></Route>
         <Route
           path="/palette/new"
@@ -70,6 +79,14 @@ class App extends Component {
               )}
               colorId={props.match.params.cid}
               paletteId={props.match.params.pid}
+            />
+          )}
+        ></Route>
+        <Route
+          render={() => (
+            <Palettelist
+              palettes={this.state.palettes}
+              deleteMiniPalette={this.deleteMiniPalette}
             />
           )}
         ></Route>

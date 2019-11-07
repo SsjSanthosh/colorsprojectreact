@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/core";
 import { SortableElement } from "react-sortable-hoc";
 import DeleteIcon from "@material-ui/icons/Delete";
+import sizes from "../../Helpers/Breakpoint";
 const style = {
   root: {
     width: "20%",
@@ -13,7 +14,19 @@ const style = {
       color: "white",
       transform: "scale(1.5)"
     },
-    padding: "0"
+    padding: "0",
+    [sizes.down("lg")]: {
+      width: "25%",
+      height: "18vh"
+    },
+    [sizes.down("md")]: {
+      width: "50%",
+      height: "8vh"
+    },
+    [sizes.down("sm")]: {
+      width: "100%",
+      height: "5vh"
+    }
   },
   boxContent: {
     display: "flex",
