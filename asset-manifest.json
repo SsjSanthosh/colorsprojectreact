@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/colorsprojectreact/static/css/main.7cc72dce.chunk.css",
-    "main.js": "/colorsprojectreact/static/js/main.e78b788f.chunk.js",
-    "main.js.map": "/colorsprojectreact/static/js/main.e78b788f.chunk.js.map",
+    "main.js": "/colorsprojectreact/static/js/main.bd80a575.chunk.js",
+    "main.js.map": "/colorsprojectreact/static/js/main.bd80a575.chunk.js.map",
     "runtime-main.js": "/colorsprojectreact/static/js/runtime-main.5865a5a1.js",
     "runtime-main.js.map": "/colorsprojectreact/static/js/runtime-main.5865a5a1.js.map",
     "static/css/2.292c8731.chunk.css": "/colorsprojectreact/static/css/2.292c8731.chunk.css",
     "static/js/2.60bb5187.chunk.js": "/colorsprojectreact/static/js/2.60bb5187.chunk.js",
     "static/js/2.60bb5187.chunk.js.map": "/colorsprojectreact/static/js/2.60bb5187.chunk.js.map",
     "index.html": "/colorsprojectreact/index.html",
-    "precache-manifest.5e5992c0b4613129ce6c3c787b4ebe51.js": "/colorsprojectreact/precache-manifest.5e5992c0b4613129ce6c3c787b4ebe51.js",
+    "precache-manifest.dd31aabe2f2fdd72aa618e7003dfdff4.js": "/colorsprojectreact/precache-manifest.dd31aabe2f2fdd72aa618e7003dfdff4.js",
     "service-worker.js": "/colorsprojectreact/service-worker.js",
     "static/css/2.292c8731.chunk.css.map": "/colorsprojectreact/static/css/2.292c8731.chunk.css.map",
     "static/css/main.7cc72dce.chunk.css.map": "/colorsprojectreact/static/css/main.7cc72dce.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.292c8731.chunk.css",
     "static/js/2.60bb5187.chunk.js",
     "static/css/main.7cc72dce.chunk.css",
-    "static/js/main.e78b788f.chunk.js"
+    "static/js/main.bd80a575.chunk.js"
   ]
 }
